@@ -21,8 +21,8 @@ class PayloadEditorPanel(ctk.CTkFrame):
         btn_bar = ctk.CTkFrame(self, fg_color="transparent")
         btn_bar.pack(fill="x", padx=15, pady=(5, 15))
         
-        ctk.CTkButton(btn_bar, text="Save", fg_color="#2563EB", w=80, command=self.save_payloads).pack(side="left", padx=(0,10))
-        ctk.CTkButton(btn_bar, text="Reset to Default", fg_color="#DC2626", hover_color="#b91c1c", w=120, command=self.reset_payloads).pack(side="left")
+        ctk.CTkButton(btn_bar, text="Save", fg_color="#2563EB", width=80, command=self.save_payloads).pack(side="left", padx=(0,10))
+        ctk.CTkButton(btn_bar, text="Reset to Default", fg_color="#DC2626", hover_color="#b91c1c", width=120, command=self.reset_payloads).pack(side="left")
 
     def load_payloads(self):
         self.textbox.delete("1.0", "end")
