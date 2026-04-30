@@ -46,7 +46,7 @@
    '/usr/lib/python3/dist-packages/PyInstaller/hooks/rthooks/pyi_rth__tkinter.py',
    'PYSOURCE'),
   ('main', '/home/mal4crypt404/SimSlayer/main.py', 'PYSOURCE')],
- 'libpython3.13.so',
+ 'libpython3.13.so.1.0',
  True,
  False,
  False,

@@ -78,7 +78,7 @@ class StartupModal(ctk.CTkToplevel):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.title("⚠ Before You Start — Read This")
-        self.geometry("450x450")
+        self.geometry("550x650")
         self.resizable(False, False)
         self.protocol("WM_DELETE_WINDOW", lambda: None)
         self.transient(self.master)
