@@ -55,7 +55,11 @@ class PayloadEditorPanel(ctk.CTkFrame):
 
     def reset_payloads(self):
         import os
-        payloads_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "payloads", "default_payloads.json")
+        import sys
+        if getattr(sys, 'frozen', False):
+            payloads_path = os.path.join(sys._MEIPASS, "payloads", "default_payloads.json")
+        else:
+            payloads_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "payloads", "default_payloads.json")
         try:
             with open(payloads_path, 'r') as f:
                 default_data = json.load(f)

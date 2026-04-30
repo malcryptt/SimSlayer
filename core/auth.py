@@ -4,7 +4,14 @@ import uuid
 import tweepy
 from cryptography.fernet import Fernet
 
-CONFIG_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.json")
+import sys
+
+if getattr(sys, 'frozen', False):
+    base_dir = os.path.dirname(sys.executable)
+else:
+    base_dir = os.path.dirname(os.path.dirname(__file__))
+    
+CONFIG_PATH = os.path.join(base_dir, "config.json")
 
 def _get_machine_key():
     machine_id = str(uuid.getnode())

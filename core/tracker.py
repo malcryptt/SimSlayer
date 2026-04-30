@@ -2,7 +2,16 @@ import sqlite3
 import os
 import datetime
 
-DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "simslayer.db")
+import sys
+
+if getattr(sys, 'frozen', False):
+    import pathlib
+    base_dir = os.path.dirname(sys.executable)
+else:
+    base_dir = os.path.dirname(os.path.dirname(__file__))
+
+os.makedirs(os.path.join(base_dir, "data"), exist_ok=True)
+DB_PATH = os.path.join(base_dir, "data", "simslayer.db")
 
 def init_db():
     conn = sqlite3.connect(DB_PATH)
